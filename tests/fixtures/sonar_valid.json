@@ -1,0 +1,21 @@
+{
+  "total": 2,
+  "issues": [
+    {
+      "component": "project_key:src/main.py",
+      "line": 15,
+      "severity": "MAJOR",
+      "rule": "python:S123",
+      "message": "Do not use foo"
+    },
+    {
+      "component": "project_key:src/app.js",
+      "textRange": {
+        "startLine": 20
+      },
+      "severity": "MINOR",
+      "rule": "js:S456",
+      "message": "Use const instead of var"
+    }
+  ]
+}

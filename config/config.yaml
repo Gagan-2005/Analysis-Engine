@@ -1,0 +1,114 @@
+# # Analysis Engine Configuration
+
+# paths:
+#   workspace: "workspace"
+#   repositories: "workspace/repositories"
+#   temp: "workspace/temp"
+#   raw_results: "raw-results"
+#   logs: "logs"
+#   reports: "reports"
+
+# scanner:
+#   include_unknown_files: false
+#   ignored_directories:
+#     - .git
+#     - .idea
+#     - .vscode
+#     - __pycache__
+#     - node_modules
+#     - venv
+#     - .venv
+#     - dist
+#     - build
+#     - target
+#     - .scannerwork
+#     - .pytest_cache
+
+# # analyzers:
+# #   sonarqube:
+# #     url: "http://localhost:9000"
+# #     token: "squ_816243ab9f94ec321d40c0ab000b7c51a705a913"
+# #     executable_path: "sonar-scanner"
+# #     docker_image: "sonarsource/sonar-scanner-cli:latest"
+
+# #   cppcheck:
+# #     executable_path: "cppcheck"
+# #     docker_image: ""
+
+# #   arduino_cli:
+# #     executable_path: "arduino-cli"
+# #     docker_image: ""
+# #     fqbn: "arduino:avr:uno"
+
+#   analyzers:
+#   sonarqube:
+#     docker_image: "sonarsource/sonar-scanner-cli:latest"
+
+#   cppcheck:
+#     docker_image: "neszt/cppcheck-docker:latest"
+
+#   arduino_cli:
+#     docker_image: "ghcr.io/jpconstantineau/docker_arduino_cli:latest"
+#     fqbn: "arduino:avr:uno"
+
+# Analysis Engine Configuration
+
+paths:
+  workspace: "workspace"
+  repositories: "workspace/repositories"
+  temp: "workspace/temp"
+  raw_results: "raw-results"
+  logs: "logs"
+  reports: "reports"
+
+executor:
+  max_workers: 3
+
+preparation:
+  exclude_dirs:
+    - ".git"
+    - "node_modules"
+    - "__pycache__"
+    - "build"
+    - "dist"
+    - ".gradle"
+    - ".idea"
+    - "venv"
+    - "env"
+  exclude_extensions:
+    - ".pyc"
+    - ".o"
+    - ".class"
+    - ".log"
+
+scanner:
+  include_unknown_files: false
+  ignored_directories:
+    - .git
+    - .idea
+    - .vscode
+    - __pycache__
+    - node_modules
+    - venv
+    - .venv
+    - dist
+    - build
+    - target
+    - .scannerwork
+    - .pytest_cache
+
+analyzers:
+  sonarqube:
+    url: "http://localhost:9000"
+    token: "squ_816243ab9f94ec321d40c0ab000b7c51a705a913"
+    executable_path: "sonar-scanner"
+    docker_image: "sonarsource/sonar-scanner-cli:latest"
+
+  cppcheck:
+    executable_path: "cppcheck"
+    docker_image: "neszt/cppcheck-docker:latest"
+
+  arduino_cli:
+    executable_path: "arduino-cli"
+    docker_image: "ghcr.io/jpconstantineau/docker_arduino_cli:latest"
+    fqbn: "arduino:avr:uno"

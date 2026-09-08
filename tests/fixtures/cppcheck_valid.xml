@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results>
+  <errors>
+    <error id="missingInclude" severity="error" msg="Missing header file.">
+      <location file="src/main.c" line="10"/>
+    </error>
+    <error id="uninitvar" severity="warning" msg="Uninitialized variable.">
+      <location file="src/utils.c" line="42"/>
+    </error>
+  </errors>
+</results>
